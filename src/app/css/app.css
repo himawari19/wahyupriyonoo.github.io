@@ -1394,7 +1394,7 @@ html, body {
 }
 
 .yb-margin-top-1 {
-  margin-top: 30px;
+  margin-top: -30px;
 }
 
 .yb-margin-top-2 {
