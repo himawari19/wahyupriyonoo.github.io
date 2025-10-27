@@ -21,15 +21,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Tambah CNAME otomatis setiap deploy (aman jika file CNAME sudah ada)
+      # WAJIB untuk GitHub Pages (men-setup environment & token)
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      # Tambah CNAME (pastikan domain ini memang yang kamu pakai)
       - name: Ensure CNAME
-        run: |
-          echo "www.wahyupriyonoo.my.id" > CNAME
+        run: echo "www.wahyupriyonoo.my.id" > CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .   # root repo (ubah bila situsmu ada di /dist atau /docs)
+          # kalau situs ada di folder lain (mis. /dist atau /docs), ubah path ini
+          path: .
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
