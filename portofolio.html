@@ -398,7 +398,9 @@
       </div>
     </section>
 
-    <footer>© <span id="year"></span> Mazway</footer>
+    <footer>
+      © <span id="year"></span> Wahyu Hendro Priyono - All Rights Reserved
+    </footer>
 
     <div class="modal-backdrop" id="modalBackdrop">
       <div class="modal">
@@ -417,111 +419,7 @@
     </div>
 
     <script>
-      const projects = [
-        {
-          id: "psi-sgm",
-          title: "PageSpeed Monitor – SGM",
-          desc: "Automates Google PSI runs via GitHub Actions, stores results, and publishes dashboards.",
-          tags: ["Python", "GitHub Actions", "CSV/JSON"],
-          image:
-            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
-          github: "https://github.com/hima19/pagespeed-monitor-sgm",
-          live: "https://maazway.github.io/pagespeed-monitor-sgm/",
-          badge: "2025",
-        },
-        {
-          id: "playwright-nr",
-          title: "Playwright E2E – Nutriclub/NR",
-          desc: "Automated end-to-end testing with POM, CI matrix, retries, and Telegram report.",
-          tags: ["Playwright", "CI/CD", "Telegram"],
-          image:
-            "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop",
-          github: "https://github.com/hima19/playwright_generasimaju",
-          live: "#",
-          badge: "2025",
-        },
-        {
-          id: "n8n-bot",
-          title: "n8n AI Media Bot",
-          desc: "Telegram bot that takes prompts, generates image/video/audio, uploads to Drive, and returns links with metadata.",
-          tags: ["n8n", "AI Ops", "Drive"],
-          image:
-            "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=800&auto=format&fit=crop",
-          github: "https://github.com/hima19",
-          live: "#",
-          badge: "2025",
-        },
-        {
-          id: "qa-portfolio",
-          title: "QA Portfolio Website",
-          desc: "React + FastAPI + MongoDB portfolio with case studies, metrics, and downloadable CV.",
-          tags: ["React", "FastAPI", "MongoDB"],
-          image:
-            "https://images.unsplash.com/photo-1520881363902-a0ff4e722963?q=80&w=800&auto=format&fit=crop",
-          github: "https://github.com/hima19",
-          live: "#",
-          badge: "2025",
-        },
-        {
-          id: "split-compare",
-          title: "Split-View Compare Userscript",
-          desc: "Im skilled in end-to-end, manual, and performance testing to guarantee application stability and quality",
-          tags: ["Userscript", "QA Tools"],
-          image:
-            "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=800&auto=format&fit=crop",
-          github: "https://github.com/hima19",
-          live: "#",
-          badge: "2025",
-        },
-        {
-          id: "otp-copy",
-          title: "OTP Copy Refresh",
-          desc: "Microcopy improvements for OTP flows to reduce confusion and support rate-limits with friendlier wording.",
-          tags: ["UX Writing", "A/B Test"],
-          image:
-            "https://images.unsplash.com/photo-1505238680356-667803448bb6?q=80&w=800&auto=format&fit=crop",
-          github: "https://github.com/hima19",
-          live: "#",
-          badge: "2025",
-        },
-        // Items with video (7,8,9)
-        {
-          id: "demo-video-1",
-          title: "Userscript Demo – Prod vs Dev",
-          desc: "Short demo showcasing mirrored scroll/click across two environments.",
-          tags: ["Demo", "YouTube"],
-          image:
-            "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop",
-          github: "https://github.com/hima19",
-          live: "#",
-          video: "https://youtu.be/j4SVefGwGsQ?si=TZFVqWHC4NhJbuuq",
-          badge: "2025",
-        },
-        {
-          id: "demo-video-2",
-          title: "Playwright Run – Quick Tour",
-          desc: "Walkthrough of CI matrix, retries, and Telegram reporting.",
-          tags: ["Demo", "Playwright"],
-          image:
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop",
-          github: "https://github.com/hima19",
-          live: "#",
-          video: "https://youtu.be/j4SVefGwGsQ?si=TZFVqWHC4NhJbuuq",
-          badge: "2025",
-        },
-        {
-          id: "demo-video-3",
-          title: "n8n Bot – Media Pipeline",
-          desc: "Prompt in → image/video/audio out, Drive upload + Telegram notify.",
-          tags: ["Demo", "n8n"],
-          image:
-            "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop",
-          github: "https://github.com/hima19",
-          live: "#",
-          video: "https://youtu.be/j4SVefGwGsQ?si=TZFVqWHC4NhJbuuq",
-          badge: "2025",
-        },
-      ];
+      let projects = [];
 
       const grid = document.getElementById("projectGrid");
       const pager = document.getElementById("pager");
@@ -529,7 +427,17 @@
       const INCLUDE_PLAYLIST_PARAMS = false; // agar menghindari blokir embed dari playlist
       const pageSize = 6;
       let currentPage = 1;
-      const totalPages = Math.ceil(projects.length / pageSize);
+      let totalPages = 0;
+
+      // load projects data from shared JSON so index.html can reuse same data
+      fetch("src/data/projects.json")
+        .then((r) => r.json())
+        .then((data) => {
+          projects = data;
+          totalPages = Math.ceil(projects.length / pageSize);
+          renderPage(1);
+        })
+        .catch((err) => console.error("Failed to load projects.json", err));
 
       const observer = new IntersectionObserver(
         (entries) => {
@@ -607,8 +515,6 @@
           window.scrollTo({ top: prj.offsetTop - 10, behavior: "smooth" });
         }
       });
-
-      renderPage(1);
 
       const backdrop = document.getElementById("modalBackdrop");
       const modalTitle = document.getElementById("modalTitle");
@@ -710,9 +616,7 @@
         console.log("Element projectGrid ditemukan");
       }
 
-      // Memastikan fungsi renderPage dipanggil
-      renderPage(1);
-      console.log("renderPage dipanggil dengan halaman 1");
+      // renderPage will be called after loading projects.json
 
       // Fallback visibility - pastikan elemen terlihat
       window.addEventListener("load", function () {
@@ -729,6 +633,14 @@
           }
         });
       }, 500);
+      // Mark portfolio link as active when on portfolio page
+      const portfolioLink = document.querySelector(
+        'a[href="/portofolio.html"]'
+      );
+      if (portfolioLink) {
+        portfolioLink.classList.add("yb-inner-link");
+        portfolioLink.style.color = "#0078d4";
+      }
     </script>
   </body>
 </html>

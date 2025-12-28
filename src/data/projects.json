@@ -1,0 +1,72 @@
+[
+  {
+    "id": "pagespeed-monitor",
+    "title": "Page Speed Monitor Website",
+    "desc": "Automates Google PSI runs via GitHub Actions, stores results, and publishes dashboards.",
+    "tags": ["Python", "GitHub Actions", "CSV/JSON"],
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+    "github": "https://github.com/hima19/pagespeed-monitor-sgm",
+    "live": "https://maazway.github.io/pagespeed-monitor-sgm/",
+    "badge": "2025"
+  },
+  {
+    "id": "psi-sgm",
+    "title": "PageSpeed Monitor – SGM",
+    "desc": "Automates Google PSI runs via GitHub Actions, stores results, and publishes dashboards.",
+    "tags": ["Python", "GitHub Actions", "CSV/JSON"],
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+    "github": "https://github.com/hima19/pagespeed-monitor-sgm",
+    "live": "https://maazway.github.io/pagespeed-monitor-sgm/",
+    "badge": "2025"
+  },
+  {
+    "id": "playwright-nr",
+    "title": "Playwright E2E – Nutriclub/NR",
+    "desc": "Automated end-to-end testing with POM, CI matrix, retries, and Telegram report.",
+    "tags": ["Playwright", "CI/CD", "Telegram"],
+    "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop",
+    "github": "https://github.com/hima19/playwright_generasimaju",
+    "live": "#",
+    "badge": "2025"
+  },
+  {
+    "id": "n8n-bot",
+    "title": "n8n AI Media Bot",
+    "desc": "Telegram bot that takes prompts, generates image/video/audio, uploads to Drive, and returns links with metadata.",
+    "tags": ["n8n", "AI Ops", "Drive"],
+    "image": "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=800&auto=format&fit=crop",
+    "github": "https://github.com/hima19",
+    "live": "#",
+    "badge": "2025"
+  },
+  {
+    "id": "qa-portfolio",
+    "title": "QA Portfolio Website",
+    "desc": "React + FastAPI + MongoDB portfolio with case studies, metrics, and downloadable CV.",
+    "tags": ["React", "FastAPI", "MongoDB"],
+    "image": "https://images.unsplash.com/photo-1520881363902-a0ff4e722963?q=80&w=800&auto=format&fit=crop",
+    "github": "https://github.com/hima19",
+    "live": "#",
+    "badge": "2025"
+  },
+  {
+    "id": "split-compare",
+    "title": "Split-View Compare Userscript",
+    "desc": "Im skilled in end-to-end, manual, and performance testing to guarantee application stability and quality",
+    "tags": ["Userscript", "QA Tools"],
+    "image": "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=800&auto=format&fit=crop",
+    "github": "https://github.com/hima19",
+    "live": "#",
+    "badge": "2025"
+  },
+  {
+    "id": "otp-copy",
+    "title": "OTP Copy Refresh",
+    "desc": "Microcopy improvements for OTP flows to reduce confusion and support rate-limits with friendlier wording.",
+    "tags": ["UX Writing", "A/B Test"],
+    "image": "https://images.unsplash.com/photo-1505238680356-667803448bb6?q=80&w=800&auto=format&fit=crop",
+    "github": "https://github.com/hima19",
+    "live": "#",
+    "badge": "2025"
+  }
+]
