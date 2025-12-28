@@ -1,5 +1,5 @@
 "use strict";
-const { task, src, dest, watch, parallel, series } = require("gulp");
+const { src, dest, watch, series } = require("gulp");
 
 const sass = require("gulp-sass");
 const fileinclude = require("gulp-file-include");
@@ -8,7 +8,6 @@ const autoprefixer = require("gulp-autoprefixer");
 const csso = require("gulp-csso");
 const rename = require("gulp-rename");
 const concat = require("gulp-concat");
-const sourcemaps = require("gulp-sourcemaps");
 const htmlbeautify = require("gulp-html-beautify");
 const uglify = require('gulp-uglify');
 
@@ -55,7 +54,6 @@ function browser(done) {
     ],
     series(htmlbuild, htmlformat)
   );
-  //watch(paths.js, series(jsbuild));
 
   done();
 }
@@ -75,9 +73,7 @@ function cssbuild(done) {
     )
     .pipe(rename({ suffix: ".min" }))
     .pipe(dest(paths.dest.css))
-
-    .pipe(browserSync.reload({ stream: true })); // prompts a reload after compilation
-  done();
+    .pipe(browserSync.reload({ stream: true }));
 }
 
 function jsbuild(done) {
@@ -92,7 +88,6 @@ function jsbuild(done) {
   .pipe(uglify())
   .pipe(dest("src/app/js"))
   .pipe(browserSync.reload({ stream: true }));
-  done();
 }
 
 function htmlbuild(done) {
@@ -114,7 +109,6 @@ function htmlbuild(done) {
     )
     .pipe(dest(paths.root))
     .pipe(browserSync.reload({ stream: true }));
-  done();
 }
 
 function htmlformat(done) {
@@ -124,7 +118,6 @@ function htmlformat(done) {
   ])
     .pipe( htmlbeautify(options) )
     .pipe(dest(paths.root));
-  done();
 }
  
 exports.css = series(cssbuild);

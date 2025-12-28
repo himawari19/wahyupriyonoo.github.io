@@ -7,6 +7,7 @@
     "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
     "github": "https://github.com/hima19/pagespeed-monitor-sgm",
     "live": "https://maazway.github.io/pagespeed-monitor-sgm/",
+    "video": "https://www.youtube.com/watch?v=Cwi29hqho_U",
     "badge": "2025"
   },
   {
@@ -17,6 +18,7 @@
     "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
     "github": "https://github.com/hima19/pagespeed-monitor-sgm",
     "live": "https://maazway.github.io/pagespeed-monitor-sgm/",
+    "video": "",
     "badge": "2025"
   },
   {
@@ -27,6 +29,7 @@
     "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop",
     "github": "https://github.com/hima19/playwright_generasimaju",
     "live": "#",
+    "video": "",
     "badge": "2025"
   },
   {
@@ -37,16 +40,7 @@
     "image": "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=800&auto=format&fit=crop",
     "github": "https://github.com/hima19",
     "live": "#",
-    "badge": "2025"
-  },
-  {
-    "id": "qa-portfolio",
-    "title": "QA Portfolio Website",
-    "desc": "React + FastAPI + MongoDB portfolio with case studies, metrics, and downloadable CV.",
-    "tags": ["React", "FastAPI", "MongoDB"],
-    "image": "https://images.unsplash.com/photo-1520881363902-a0ff4e722963?q=80&w=800&auto=format&fit=crop",
-    "github": "https://github.com/hima19",
-    "live": "#",
+    "video": "",
     "badge": "2025"
   },
   {
@@ -57,6 +51,7 @@
     "image": "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=800&auto=format&fit=crop",
     "github": "https://github.com/hima19",
     "live": "#",
+    "video": "",
     "badge": "2025"
   },
   {
@@ -67,6 +62,7 @@
     "image": "https://images.unsplash.com/photo-1505238680356-667803448bb6?q=80&w=800&auto=format&fit=crop",
     "github": "https://github.com/hima19",
     "live": "#",
+    "video": "",
     "badge": "2025"
   }
 ]

@@ -1,0 +1,818 @@
+/* ----------------------------------------------------------------
+[Table of contents]
+01. Body
+02. Page Loader
+03. Main Menu
+04. Main Content
+05. Section Home
+06. Section About
+07. Section Resume
+08. Section Portfolio (Featured Projects)
+09. Main Footer
+10. Components
+------------------------------------------------------------------- */
+
+/*-------------------------------------------------------------------
+01. Body
+------------------------------------------------------------------- */
+html, body {
+  overflow-x: hidden;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+/*-------------------------------------------------------------------
+02. Page Loader
+------------------------------------------------------------------- */
+.yb-pageloader-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  font-weight: 700;
+  z-index: 10000;
+  background-color: #fff;
+}
+
+.yb-pageloader-wrapper.page-is-loaded {
+  display: none;
+}
+
+/*-------------------------------------------------------------------
+03. Main Menu
+------------------------------------------------------------------- */
+.yb-main-header {
+  background: #fff;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 80px;
+}
+
+.yb-main-menu {
+  position: absolute;
+  z-index: 100;
+  background: #fff;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.yb-main-menu.fixed {
+  position: fixed;
+  top: 0;
+  bottom: auto;
+}
+
+.yb-main-menu .uk-navbar-nav > li > a {
+  text-transform: none;
+  font-weight: 700;
+}
+
+.yb-main-menu .yb-icon-close {
+  display: none;
+}
+
+@media (max-width: 959px) {
+  .yb-main-menu.open-menu .yb-menu-toggle-wrapper {
+    display: block;
+  }
+}
+
+.yb-main-menu.open-menu .yb-icon-menu {
+  display: none;
+}
+
+.yb-main-menu.open-menu .yb-icon-close {
+  display: inline;
+}
+
+.yb-logo {
+  font-weight: 700;
+  position: relative;
+}
+
+.yb-logo span {
+  display: inline-block;
+  position: relative;
+}
+
+.yb-logo span::first-letter {
+  color: #fff;
+}
+
+.yb-logo::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  margin-top: -15px;
+  background: #1e87f0;
+  left: 3px;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.yb-menu-toggle-wrapper {
+  display: block;
+}
+
+.yb-menu-toggle-wrapper .uk-navbar-right {
+  position: absolute;
+  right: 40px;
+}
+
+@media (max-width: 959px) {
+  .yb-menu-toggle-wrapper {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    overflow: auto;
+    max-height: 420px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+  }
+  .yb-menu-toggle-wrapper .uk-navbar-center {
+    position: relative;
+    transform: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .yb-menu-toggle-wrapper .uk-navbar-right {
+    position: relative;
+    right: 0;
+  }
+  .yb-menu-toggle-wrapper .uk-navbar-nav {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 959px) and (max-width: 639px) {
+  .yb-menu-toggle-wrapper .uk-navbar-nav:not(.yb-social-icons) {
+    display: block;
+  }
+  .yb-menu-toggle-wrapper .uk-navbar-nav:not(.yb-social-icons) a {
+    min-height: 40px;
+  }
+}
+
+/*-------------------------------------------------------------------
+04. Main Content
+------------------------------------------------------------------- */
+.yb-main-content {
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  min-height: 650px;
+}
+
+.yb-section {
+  position: relative;
+}
+
+.yb-section-padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.yb-section-padding-top {
+  padding-top: 80px;
+}
+
+.yb-section-padding-bottom {
+  padding-bottom: 80px;
+}
+
+.yb-section-title {
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+/*-------------------------------------------------------------------
+05. Section Home
+------------------------------------------------------------------- */
+.yb-profile-desc {
+  position: fixed;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.yb-profile-desc h1 {
+  font-size: 80px;
+  letter-spacing: -4px;
+}
+
+.yb-profile-desc h1.yb-gradient-text {
+  background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+  background: linear-gradient(45deg, #09009f, #00ff95 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.yb-profile-desc h1.yb-shadow-text {
+  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 959px) {
+  .yb-profile-desc h1 {
+    font-size: 50px;
+  }
+}
+
+.yb-profile-desc-wrap {
+  align-self: center;
+  padding-bottom: 80px;
+}
+
+.yb-myjob {
+  font-size: 25px;
+}
+
+.yb-myjob span {
+  text-decoration: underline;
+  color: #1e87f0;
+}
+
+/* Scroll Icon */
+.yb-scroll-icon {
+  position: fixed;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #1e87f0;
+  transition: all 0.3s ease;
+  z-index: 50;
+}
+
+.yb-scroll-icon span[data-uk-icon] {
+  display: block;
+  animation: scroll-arrow 2s infinite;
+  -webkit-animation: scroll-arrow 2s infinite;
+}
+
+.yb-scroll-icon span[data-uk-icon]:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.yb-scroll-icon span[data-uk-icon]:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.yb-scroll-icon span[data-uk-icon]:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.yb-scroll-text {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #0056b3;
+}
+
+.yb-scroll-icon:hover span[data-uk-icon] {
+  color: #0056b3;
+}
+
+.yb-scroll-icon:hover .yb-scroll-text {
+  color: #0056b3;
+}
+
+@keyframes scroll-arrow {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes scroll-arrow {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: translateY(10px);
+    opacity: 0.5;
+  }
+}
+
+/*-------------------------------------------------------------------
+06. Section About
+------------------------------------------------------------------- */
+.yb-my-profile {
+  position: relative;
+}
+
+.yb-my-profile-img {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+@media (max-width: 959px) {
+  .yb-my-profile-img {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+}
+
+.yb-my-profile-desc {
+  position: relative;
+}
+
+.yb-my-profile-desc-top {
+  padding: 80px 30px 10px 40px;
+}
+
+@media (max-width: 639px) {
+  .yb-my-profile-desc-top {
+    padding: 80px 15px 10px 15px;
+  }
+}
+
+.yb-my-profile-desc-bottom {
+  position: relative;
+  padding: 30px 30px 30px 40px;
+}
+
+@media (max-width: 639px) {
+  .yb-my-profile-desc-bottom {
+    padding: 30px 15px 30px 15px;
+  }
+}
+
+.yb-my-profile-desc-bottom::before {
+  content: "";
+  position: absolute;
+  background: #2336B6;
+  bottom: 0;
+  top: 0;
+  width: 20px;
+  left: -20px;
+  z-index: 10;
+}
+
+.yb-my-profile-desc-bottom::after {
+  content: "";
+  top: 0;
+  position: absolute;
+  background: inherit;
+  bottom: 0;
+  right: -1200px;
+  width: 1200px;
+}
+
+.yb-my-profile-desc-info {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.yb-my-profile-desc-info span {
+  display: inline-block;
+  width: 100px;
+  font-weight: 700;
+}
+
+.yb-box-services > div {
+  margin-top: 0 !important;
+}
+
+.yb-box-service {
+  padding: 30px 10px;
+}
+
+.yb-box-service .uk-icon {
+  display: block;
+}
+
+.yb-box-service h5 {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+/*-------------------------------------------------------------------
+07. Section Resume
+------------------------------------------------------------------- */
+.yb-resume-list > .uk-list {
+  padding-left: 0;
+  margin-bottom: 60px;
+}
+
+.yb-resume-item {
+  position: relative;
+  padding: 30px 30px 0 40px;
+}
+
+.yb-resume-item h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.yb-resume-item:hover h4 {
+  color: #1e87f0;
+}
+
+.yb-resume-item-date {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+}
+
+.yb-resume-item-date-icon {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding-top: 2px;
+  border-radius: 50%;
+  background: #1e87f0;
+  color: #fff;
+  float: left;
+}
+
+.yb-resume-item-date-text {
+  float: left;
+  padding-top: 3px;
+  padding-left: 10px;
+}
+
+.yb-resume-skill-item .uk-progress {
+  margin-bottom: 0;
+  height: 5px;
+}
+
+.yb-box-circle {
+  width: 100px;
+  margin: 6px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.yb-box-circle strong {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.yb-box-circle:hover strong {
+  color: #1e87f0;
+}
+
+.yb-box-circle-title {
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/*-------------------------------------------------------------------
+08. Section Portfolio (Featured Projects)
+------------------------------------------------------------------- */
+.yb-nav-left::before {
+  border: 0;
+}
+
+.yb-nav-left li {
+  border-radius: 4px;
+}
+
+.yb-nav-left a {
+  text-transform: none;
+  font-weight: 700;
+  border: 0 !important;
+  color: #000;
+  padding-left: 0;
+}
+
+.yb-nav-left a span {
+  width: 0;
+  transition: 0.3s;
+}
+
+.yb-nav-left a:hover {
+  color: #1e87f0;
+}
+
+.yb-nav-left .uk-active {
+  position: relative;
+}
+
+.yb-nav-left .uk-active a {
+  color: #1e87f0;
+}
+
+.yb-nav-left .uk-active span {
+  width: 30px;
+}
+
+/*-------------------------------------------------------------------
+09. Main Footer
+------------------------------------------------------------------- */
+.yb-main-footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #5b21b6;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.yb-main-footer-wrapper {
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.yb-totop {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #5b21b6;
+  top: -60px;
+  right: 20px;
+  text-align: center;
+  z-index: 20;
+  color: #fff;
+  border-radius: 50%;
+  padding-top: 18px;
+  transition: .3s;
+  transform: scale(0.7);
+}
+
+.yb-totop:hover, .yb-totop:focus {
+  color: #fff;
+  background-color: #000;
+  transform: scale(1);
+}
+
+.yb-footer-social a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 640px) {
+  .yb-footer-social a {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 639px) {
+  .yb-footer-social a {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.waveHorizontals {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  overflow: hidden;
+  z-index: 10;
+  top: -20px;
+}
+
+.waveHorizontal {
+  width: 200%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-size: 350px 100%;
+  transform-origin: 0 100% 0;
+  -webkit-animation-name: move;
+  animation-name: move;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+#waveHorizontal1 {
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+}
+
+#waveHorizontal2 {
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+#waveHorizontal3 {
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: translate(-175px, 0px) scale(1, 1);
+    transform: translate(-175px, 0px) scale(1, 1);
+  }
+  50% {
+    -webkit-transform: translate(-87px, 0px) scale(1, 0.5);
+    transform: translate(-87px, 0px) scale(1, 0.5);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px) scale(1, 1);
+    transform: translate(0px, 0px) scale(1, 1);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(-175px, 0px) scale(1, 1);
+  }
+  50% {
+    transform: translate(-87px, 0px) scale(1, 0.5);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1, 1);
+  }
+}
+
+/*-------------------------------------------------------------------
+10. Components
+------------------------------------------------------------------- */
+.yb-text-small {
+  font-size: 13px;
+}
+
+.yb-border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.yb-border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.yb-label {
+  text-transform: none;
+  font-weight: 700;
+}
+
+.yb-full-height {
+  transition: 0.3s;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+.yb-full-height-fixed {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.yb-graphic-1 {
+  position: absolute;
+  top: -100px;
+  right: -60px;
+  display: block;
+  width: 220px;
+  height: 220px;
+  transform: rotate(-45deg);
+  background-image: linear-gradient(90deg, #2336B6 0%, rgba(31, 38, 103, 0.9) 100%);
+}
+
+.yb-graphic-2 {
+  position: absolute;
+  top: -100px;
+  right: 80px;
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-image: linear-gradient(-90deg, rgba(49, 207, 171, 0.5) 0%, #50E3C2 100%);
+}
+
+.yb-section-point {
+  border-left: 1px solid #e5e5e5;
+  height: 35px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.yb-section-point.right {
+  border-left: 0;
+  text-align: right;
+  border-right: 1px solid #e5e5e5;
+}
+
+.yb-section-point.center {
+  text-align: center;
+  border: 0;
+}
+
+.yb-section-point span {
+  letter-spacing: -1px;
+}
+
+.yb-section-point-wrapper {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.yb-btn {
+  text-transform: none;
+  font-weight: 700;
+  border-radius: 3px;
+  min-width: 180px;
+}
+
+.yb-btn-rounded {
+  border-radius: 30px;
+}
+
+.yb-overlay-primary {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.yb-margin-top-1 {
+  margin-top: -30px;
+}
+
+.yb-margin-top-2 {
+  margin-top: 60px;
+}
+
+.yb-margin-bottom-1 {
+  margin-bottom: 30px;
+}
+
+.yb-margin-bottom-2 {
+  margin-bottom: 60px;
+}
+
+.yb-bg-soft {
+  background-color: rgba(229, 229, 229, 0.5);
+}
+
+.yb-bg-inverse {
+  background-color: #05182c;
+}
+
+.yb-paggination {
+  font-size: 13px;
+}
+
+.yb-paggination .uk-active > a {
+  background: #1e87f0;
+  color: #fff;
+  padding: 0 8px;
+  border-radius: 3px;
+}
+
+.yb-width-1 {
+  width: 80px;
+}
+
+.yb-contact-mini .uk-icon {
+  width: 40px;
+}

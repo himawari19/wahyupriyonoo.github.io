@@ -10,7 +10,6 @@
     init_pageloader();
     init_menu_toggle();
     init_inner_link();
-    init_contact_form();
   });
 
   //Run function when window on scroll
@@ -127,86 +126,5 @@
         easing: "easeInOutExpo"
       }
     );
-  }
-
-  function init_contact_form() {
-    var $el = $("#contact-form");
-    var $alert_wrap = $("#contact-form-alert");
-     
-    if ($el.length && $alert_wrap.length) {
-      $el.on("submit", function() {
-        var $btn = $("#btn-contact-form");
-        var params = $el.serialize();
-
-        init_btn_loading($btn, true);
-
-        
-        $.post("src/php/sendmail.php", params, function(data) {
-          var dt = JSON.parse(data);
-          if (dt.status == "error") {
-            var alert = init_alert(
-              "contact-alert-err",
-              dt.status_desc,
-              "uk-alert-danger",
-              "warning"
-            );
-          } else {
-            var alert = init_alert(
-              "contact-alert-success",
-              dt.status_desc,
-              "uk-alert-primary",
-              "info"
-            );
-            $el.trigger("reset");
-          }
-          $.each(dt.error_msg, function(key, value) {
-            if (value == "") {
-              $("#" + key).removeClass("uk-form-danger");
-            } else {
-              $("#" + key).addClass("uk-form-danger");
-            }
-            $("#" + key + "_error").html(value);
-          });
-          $alert_wrap.html(alert);
-          init_btn_loading($btn, false);
-        });
-
-        return false;
-      });
-    }
-  }
-
-  function init_btn_loading($btn, is_loading) {
-    if (is_loading) {
-      $btn.attr("disabled", "disabled");
-      $btn.find(".btn-text-wrap").text("Please Wait . . .");
-      $btn.find(".uk-icon").attr("hidden", "hidden");
-      $btn.append("<div uk-spinner></div>");
-    } else {
-      $btn.removeAttr("disabled");
-      $btn.find(".btn-text-wrap").text($btn.attr("data-textreset"));
-      $btn.find(".uk-icon").removeAttr("hidden");
-      $btn.find("div[uk-spinner]").remove();
-    }
-  }
-
-  function init_alert(id, msg, classname, icon) {
-    var alert =
-      '<div id="' +
-      id +
-      '" class="' +
-      classname +
-      '  uk-border-rounded" data-uk-alert>' +
-      '<a class="uk-alert-close" data-uk-close></a>' +
-      '<div class="uk-flex uk-flex-middle">' +
-      '<div><span data-uk-icon="' +
-      icon +
-      '" class="uk-margin-small-right"></span></div>' +
-      "<div>" +
-      msg +
-      "</div>" +
-      "</div>" +
-      "</div>";
-    return alert;
   }
 })(jQuery);

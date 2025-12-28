@@ -1,0 +1,88 @@
+/* Image Optimization & Lazy Loading */
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Lazy loading placeholder */
+img[loading="lazy"] {
+  background-color: #f0f0f0;
+}
+
+/* Optimize portfolio grid images */
+.uk-card-media-top img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Modal images */
+#modalImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* Wave SVG optimization */
+.waveHorizontal {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Portfolio card images */
+.thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Profile images */
+.yb-my-profile-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Logo images */
+.uk-navbar-left img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Prevent layout shift during lazy loading */
+img[loading="lazy"] {
+  min-height: 1px;
+}
+
+/* Smooth fade-in for lazy loaded images */
+@supports (animation: fade-in 0.3s ease-in) {
+  img[loading="lazy"] {
+    -webkit-animation: fade-in 0.3s ease-in;
+    animation: fade-in 0.3s ease-in;
+  }
+
+  @-webkit-keyframes fade-in {
+    from {
+      opacity: 0.8;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0.8;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
