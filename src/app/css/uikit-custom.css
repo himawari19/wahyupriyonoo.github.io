@@ -9950,7 +9950,8 @@ iframe.uk-cover {
 }
 
 .uk-margin-large-top {
-  margin-top: 40px !important;
+  margin-top: 20px !important;
+  margin-bottom: 40px !important;
 }
 
 .uk-margin-large-bottom {
@@ -9974,7 +9975,8 @@ iframe.uk-cover {
     margin-top: 70px !important;
   }
   .uk-margin-large-top {
-    margin-top: 70px !important;
+    margin-top: 20px !important;
+    margin-bottom: 40px !important;
   }
   .uk-margin-large-bottom {
     margin-bottom: 70px !important;

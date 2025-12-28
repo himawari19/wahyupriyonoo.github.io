@@ -8,12 +8,9 @@
   $(document).ready(function() {
     init_full_height();
     init_pageloader();
-    init_typed();
     init_menu_toggle();
     init_inner_link();
-    init_chart_circle();
     init_contact_form();
-    init_portfolio_details();
   });
 
   //Run function when window on scroll
@@ -41,15 +38,6 @@
   //============================================
   //initial functions
   //============================================
-
-  function init_chart_circle() {
-    $(".circle-progress").each(function(i, el) {
-      var $el = $(el);
-      $($el).circleProgress({
-        value: $el.data("value")
-      });
-    });
-  }
 
   function init_update_uikit() {
     //sometimes sticky nav oveflow
@@ -125,7 +113,6 @@
   function init_check_hash_url() {
     if (window.location.hash && window.location.hash !="" && $(window.location.hash).length) {
       var speed = window.location.hash == "#home" ? 0 : 700;
-      console.log(window.location.hash)
       init_scroll_to($(window.location.hash), speed, 79);
     }
   }
@@ -140,17 +127,6 @@
         easing: "easeInOutExpo"
       }
     );
-  }
-
-  function init_typed() {
-    var $typed = $("#typed");
-    if ($typed.length) {
-      var typed = new Typed("#typed", {
-        strings: ["developer", "freelancer", "marketer", "photographer"],
-        loop: true,
-        typeSpeed: 70
-      });
-    }
   }
 
   function init_contact_form() {
@@ -232,28 +208,5 @@
       "</div>" +
       "</div>";
     return alert;
-  }
-
-  function init_portfolio_details() { 
-    $(".show-portfolio").on("click", function() {
-      var $this = $(this);
-      var $el = $("#show-portofolio-details");
-      var $wrap = $("#portofolio-details");
-      $wrap.addClass('uk-animation-toggle');
-      UIkit.modal($el).show();
-
-      //show loading first
-      $wrap.html(
-        '<div class="uk-position-center  uk-text-center">' +
-          "<div data-uk-spinner></div> " +
-        "</div>"
-      ); 
-      
-      $.post($this.attr("href"), function(data) {
-        $wrap.html(data); 
-        $wrap.removeClass('uk-animation-toggle');
-      });
-      return false;
-    });
   }
 })(jQuery);

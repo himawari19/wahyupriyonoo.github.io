@@ -85,9 +85,7 @@ function jsbuild(done) {
     paths.root_npm+'jquery/dist/jquery.min.js',
     paths.root_npm+'jquery.easing/jquery.easing.min.js', 
     paths.root_npm+'uikit/dist/js/uikit.min.js',
-    paths.root_npm+'uikit/dist/js/uikit-icons.min.js',
-    paths.root_npm+'jquery-circle-progress/dist/circle-progress.min.js',
-    paths.root_npm+'typed.js/lib/typed.min.js'
+    paths.root_npm+'uikit/dist/js/uikit-icons.min.js'
   ])
   .pipe(concat("plugins.min.js"))
   .pipe(dest("src/app/js"))

@@ -11,3 +11,9 @@
 
 // 4. Import UIkit.
 @import "../../../node_modules/uikit/src/scss/uikit-theme.scss";
+
+// 5. Custom overrides for margin-large
+.uk-margin-large-top {
+  margin-top: 20px !important;
+  margin-bottom: 40px !important;
+}

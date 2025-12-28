@@ -24,9 +24,7 @@
   },
   "dependencies": {
     "jquery": "^3.4.1",
-    "jquery-circle-progress": "^1.2.2",
     "jquery.easing": "^1.4.1",
-    "typed.js": "^2.0.10",
     "uikit": "^3.1.7"
   },
   "browserslist": [

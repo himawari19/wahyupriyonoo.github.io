@@ -3,96 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="description" content="Portfolio of QA Engineer projects showcasing test automation, manual testing, and quality assurance expertise." />
+    <meta name="keywords" content="Portfolio, QA Projects, Test Automation, Quality Assurance" />
+    <meta name="author" content="Wahyu Hendro Priyono" />
+    <meta name="theme-color" content="#5b21b6" />
     <title>Mazway – QA Engineer & Prompt Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      as="style"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" href="src/app/css/uikit-custom.min.css?v=3" as="style" />
+    <link rel="stylesheet" href="src/app/css/uikit-custom.min.css?v=3" />
+    <link rel="preload" href="src/app/css/app.css?v=3" as="style" />
+    <link rel="stylesheet" href="src/app/css/app.css?v=3" />
     <style>
-      :root {
-        --bg: #ffffff;
-        --text: #1b1b1b;
-        --muted: #666;
-        --accent: #5b21b6;
-        --border: #e5e7eb;
-        --radius: 14px;
-        --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-        color: var(--text);
-        background: var(--bg);
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
-      a {
-        color: var(--accent);
-        text-decoration: none;
-        font-weight: 500;
-      }
+      /* Portfolio-specific styling */
       .container {
         max-width: 1100px;
         margin: 0 auto;
         padding: 24px;
       }
 
-      html {
-        scroll-behavior: smooth;
-      }
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation: none !important;
-          transition: none !important;
-        }
-        .hero,
-        .section,
-        .card {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-      }
-
       .hero {
         text-align: center;
-        margin-top: 0px;
+        margin-top: 40px;
         padding: 30px 0px;
-        opacity: 0;
-        animation: fadeUp 0.8s ease forwards;
       }
+
       .hero h1 {
         font-size: 30px;
         margin-bottom: 5px;
-        color: #111;
       }
+
       .hero p {
         max-width: 700px;
         margin: 0 auto 24px;
-        color: var(--muted);
         font-size: 17px;
       }
+
       .cta {
         display: flex;
         justify-content: center;
         gap: 14px;
         flex-wrap: wrap;
       }
+
       .btn {
-        background: var(--accent);
+        background: #5b21b6;
         color: white;
         padding: 12px 20px;
         border: none;
@@ -101,6 +68,7 @@
         cursor: pointer;
         transition: all 0.2s ease;
       }
+
       .btn:hover {
         background: #4c1d95;
         box-shadow: 0 6px 14px rgba(91, 33, 182, 0.25);
@@ -109,48 +77,42 @@
       .section {
         margin-top: 40px;
         text-align: center;
-        opacity: 0;
-        animation: fadeUp 0.8s ease 0.2s forwards;
       }
+
+      #skills {
+        padding-bottom: 60px;
+      }
+
       .section h2 {
         font-size: 28px;
-        color: var(--accent);
+        color: #5b21b6;
         margin-bottom: 16px;
       }
+
       .chips {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
+        max-width: 1100px;
+        margin: 0 auto;
       }
+
       .chip {
-        border: 1px solid var(--border);
+        border: 1px solid #e5e7eb;
         background: #fff;
         padding: 8px 14px;
         border-radius: 999px;
         font-size: 14px;
         color: #444;
-        transition: background 0.2s, color 0.2s, border-color 0.2s,
-          box-shadow 0.2s;
+        transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
       }
-      #backtohome .chip {
-        background: var(--accent);
-        color: #fff;
-        border-color: var(--accent);
-      }
-      #backtohome .chip:hover,
-      #backtohome .chip:focus-visible {
-        background: #4c1d95;
-        border-color: #4c1d95;
-        box-shadow: 0 4px 10px rgba(91, 33, 182, 0.25);
-      }
-      .chip:hover,
-      .chip:focus-visible {
-        background: var(--accent);
-        border-color: var(--accent);
+
+      .chip:hover {
+        background: #5b21b6;
+        border-color: #5b21b6;
         color: #fff;
         box-shadow: 0 4px 10px rgba(91, 33, 182, 0.25);
-        outline: none;
       }
 
       .grid {
@@ -160,45 +122,44 @@
         gap: 22px;
         margin-top: 24px;
       }
+
       .card {
         background: #fafafa;
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         overflow: hidden;
         transition: transform 0.25s ease, box-shadow 0.25s ease;
         cursor: pointer;
         text-align: left;
-        opacity: 0;
-        transform: translateY(30px);
         flex: 1 1 300px;
         max-width: 340px;
       }
-      .card.visible {
-        opacity: 1;
-        transform: translateY(0);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-      }
+
       .card:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 18px rgba(91, 33, 182, 0.15);
       }
+
       .thumb img {
         width: 100%;
         height: 180px;
         object-fit: cover;
       }
+
       .card-body {
         padding: 16px;
       }
+
       .title {
         font-weight: 700;
         font-size: 18px;
         color: #111;
         margin-bottom: 6px;
       }
+
       .desc {
-        color: var(--muted);
+        color: #666;
         font-size: 15px;
       }
 
@@ -208,23 +169,27 @@
         gap: 8px;
         margin-top: 18px;
       }
+
       .pager-btn {
-        border: 1px solid var(--border);
+        border: 1px solid #e5e7eb;
         background: #fff;
         padding: 8px 12px;
         border-radius: 8px;
         cursor: pointer;
         font-weight: 600;
       }
+
       .pager-btn:hover {
-        border-color: var(--accent);
+        border-color: #5b21b6;
         box-shadow: 0 4px 10px rgba(91, 33, 182, 0.15);
       }
+
       .pager-btn.active {
-        background: var(--accent);
+        background: #5b21b6;
         color: #fff;
-        border-color: var(--accent);
+        border-color: #5b21b6;
       }
+
       .pager-btn[disabled] {
         opacity: 0.5;
         cursor: not-allowed;
@@ -239,32 +204,29 @@
         justify-content: center;
         padding: 16px;
       }
+
       .modal {
         background: white;
-        border-radius: var(--radius);
+        border-radius: 14px;
         max-width: 700px;
         width: 100%;
         overflow: hidden;
-        box-shadow: var(--shadow);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
       }
+
       .modal header {
         padding: 16px;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid #e5e7eb;
         font-weight: 700;
-        color: var(--accent);
+        color: #5b21b6;
         text-align: center;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
-        max-width: 100%;
-        display: block;
-        z-index: 10;
-        position: relative;
       }
+
       .modal .content {
         padding: 20px;
         text-align: center;
       }
+
       .video-wrap {
         position: relative;
         width: 100%;
@@ -276,6 +238,7 @@
         display: none;
         max-height: 400px;
       }
+
       .video-wrap iframe {
         position: absolute;
         inset: 0;
@@ -283,6 +246,7 @@
         height: 100%;
         border: 0;
       }
+
       .modal img {
         width: 100%;
         aspect-ratio: 16/9;
@@ -291,15 +255,17 @@
         margin-bottom: 16px;
         max-height: 400px;
       }
+
       .modal .tags span {
         display: inline-block;
-        background: var(--accent);
+        background: #5b21b6;
         color: white;
         font-size: 12px;
         padding: 4px 8px;
         border-radius: 999px;
         margin: 4px;
       }
+
       .modal .links {
         margin-top: 16px;
         display: flex;
@@ -308,19 +274,11 @@
         justify-content: center;
       }
 
-      footer {
-        margin-top: 80px;
-        padding: 20px;
-        text-align: center;
-        color: var(--muted);
-        border-top: 1px solid var(--border);
-      }
-
       .badge {
         position: absolute;
         top: 10px;
         right: 10px;
-        background: var(--accent);
+        background: #5b21b6;
         color: #fff;
         font-size: 12px;
         font-weight: 600;
@@ -330,6 +288,7 @@
         z-index: 2;
         pointer-events: none;
       }
+
       .modal-backdrop .badge,
       .modal .badge {
         position: absolute;
@@ -338,7 +297,7 @@
       }
     </style>
   </head>
-  <body>
+  <body id="body-app">
     <main class="container">
       <section class="hero">
         <h1>Hello There! I'm Wahyu Hendro Priyono</h1>
@@ -349,20 +308,6 @@
         </p>
         <div class="cta">
           <a class="btn" href="#projects">View Projects</a>
-          <a
-            class="btn"
-            href="https://github.com/hima19"
-            target="_blank"
-            rel="noopener"
-            >GitHub</a
-          >
-          <a
-            class="btn"
-            href="https://github.com/hima19"
-            target="_blank"
-            rel="noopener"
-            >Contect me</a
-          >
         </div>
       </section>
 
@@ -392,14 +337,32 @@
       </div>
     </section>
 
-    <section class="section" id="backtohome">
-      <div class="chips">
-        <a href="index.html" class="chip">Back To Home</a>
+    <footer class="yb-main-footer-wrapper">
+      <div class="waveHorizontals">
+        <div id="waveHorizontal1" class="waveHorizontal" data-uk-img data-src="src/img/bg/wave1.svg"></div>
+        <div id="waveHorizontal2" class="waveHorizontal" data-uk-img data-src="src/img/bg/wave2.svg"></div>
+        <div id="waveHorizontal3" class="waveHorizontal" data-uk-img data-src="src/img/bg/wave3.svg"></div>
       </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Wahyu Hendro Priyono - All Rights Reserved
+      <a href="#body-app" class="uk-visible@s yb-totop yb-inner-link" data-uk-totop aria-label="Back to top"></a>
+      <div class="yb-main-footer">
+        <div class="uk-container">
+          <div data-uk-grid class="uk-child-width-1-2@s">
+            <div class="uk-margin-remove uk-text-left@s">
+              &copy; 2025 Wahyu Hendro Priyono - All Rights Reserved
+            </div>
+            <div class="uk-margin-remove uk-text-right@s">
+              <div class="yb-footer-social">
+                <a href="https://www.linkedin.com/in/wahyu-hendro-priyono-a09a21122/" target="_blank"
+                  rel="noopener">LinkedIn</a>
+                <a href="https://myjobstreet-id.jobstreet.com.sg/resume/preview-resume.php" target="_blank"
+                  rel="noopener">Jobstreet</a>
+                <a href="https://my.indeed.com/p/wahyuh-lzq117i" target="_blank" rel="noopener">Indeed</a>
+                <a href="https://github.com/mazwaay" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <div class="modal-backdrop" id="modalBackdrop">
@@ -437,7 +400,9 @@
           totalPages = Math.ceil(projects.length / pageSize);
           renderPage(1);
         })
-        .catch((err) => console.error("Failed to load projects.json", err));
+        .catch((err) => {
+          // Silently fail if projects can't load
+        });
 
       const observer = new IntersectionObserver(
         (entries) => {
@@ -566,8 +531,6 @@
         }
       });
 
-      document.getElementById("year").textContent = new Date().getFullYear();
-
       function toEmbedUrl(url, autoplay = false) {
         try {
           const u = new URL(url);
@@ -606,41 +569,10 @@
   </div>`;
       }
 
-      // Menambahkan log untuk debugging
-      console.log("Script loaded successfully");
-
-      // Memastikan elemen DOM ditemukan
-      if (!grid) {
-        console.error("Element projectGrid tidak ditemukan");
-      } else {
-        console.log("Element projectGrid ditemukan");
-      }
-
-      // renderPage will be called after loading projects.json
-
-      // Fallback visibility - pastikan elemen terlihat
-      window.addEventListener("load", function () {
-        document.querySelectorAll(".hero, .section").forEach((el) => {
-          el.style.opacity = "1";
-        });
-      });
-
-      // Fallback jika animasi belum berjalan setelah 500ms
-      setTimeout(function () {
-        document.querySelectorAll(".hero, .section").forEach((el) => {
-          if (getComputedStyle(el).opacity === "0") {
-            el.style.opacity = "1";
-          }
-        });
-      }, 500);
-      // Mark portfolio link as active when on portfolio page
-      const portfolioLink = document.querySelector(
-        'a[href="/portofolio.html"]'
-      );
-      if (portfolioLink) {
-        portfolioLink.classList.add("yb-inner-link");
-        portfolioLink.style.color = "#0078d4";
-      }
     </script>
+
+    <!-- js -->
+    <script defer src="src/app/js/plugins.min.js"></script>
+    <script defer src="src/app/js/app.js"></script>
   </body>
 </html>
