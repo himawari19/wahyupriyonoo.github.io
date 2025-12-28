@@ -24,7 +24,7 @@
         padding: 0;
       }
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         color: var(--text);
         background: var(--bg);
         line-height: 1.6;
@@ -59,18 +59,24 @@
           animation: none !important;
           transition: none !important;
         }
+        .hero,
+        .section,
+        .card {
+          opacity: 1 !important;
+          transform: none !important;
+        }
       }
 
       .hero {
         text-align: center;
         margin-top: 0px;
-        padding: 30px 16px;
+        padding: 30px 0px;
         opacity: 0;
         animation: fadeUp 0.8s ease forwards;
       }
       .hero h1 {
-        font-size: 42px;
-        margin-bottom: 12px;
+        font-size: 30px;
+        margin-bottom: 5px;
         color: #111;
       }
       .hero p {
@@ -126,6 +132,17 @@
         color: #444;
         transition: background 0.2s, color 0.2s, border-color 0.2s,
           box-shadow 0.2s;
+      }
+      #backtohome .chip {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      #backtohome .chip:hover,
+      #backtohome .chip:focus-visible {
+        background: #4c1d95;
+        border-color: #4c1d95;
+        box-shadow: 0 4px 10px rgba(91, 33, 182, 0.25);
       }
       .chip:hover,
       .chip:focus-visible {
@@ -236,6 +253,13 @@
         font-weight: 700;
         color: var(--accent);
         text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        max-width: 100%;
+        display: block;
+        z-index: 10;
+        position: relative;
       }
       .modal .content {
         padding: 20px;
@@ -249,6 +273,8 @@
         border-radius: 8px;
         overflow: hidden;
         margin-bottom: 16px;
+        display: none;
+        max-height: 400px;
       }
       .video-wrap iframe {
         position: absolute;
@@ -259,8 +285,11 @@
       }
       .modal img {
         width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
         border-radius: 8px;
         margin-bottom: 16px;
+        max-height: 400px;
       }
       .modal .tags span {
         display: inline-block;
@@ -299,13 +328,20 @@
         border-radius: 6px;
         box-shadow: 0 2px 6px rgba(91, 33, 182, 0.25);
         z-index: 2;
+        pointer-events: none;
+      }
+      .modal-backdrop .badge,
+      .modal .badge {
+        position: absolute;
+        display: none !important;
+        visibility: hidden !important;
       }
     </style>
   </head>
   <body>
     <main class="container">
       <section class="hero">
-        <h1>Hello There! I'm Mazway</h1>
+        <h1>Hello There! I'm Wahyu Hendro Priyono</h1>
         <p>
           I ensure software works flawlessly. With expertise in manual and
           automated testing, I'm obsessed with quality and a bug-free user
@@ -313,10 +349,18 @@
         </p>
         <div class="cta">
           <a class="btn" href="#projects">View Projects</a>
-          <a class="btn" href="https://github.com/hima19" target="_blank"
+          <a
+            class="btn"
+            href="https://github.com/hima19"
+            target="_blank"
+            rel="noopener"
             >GitHub</a
           >
-          <a class="btn" href="https://github.com/hima19" target="_blank"
+          <a
+            class="btn"
+            href="https://github.com/hima19"
+            target="_blank"
+            rel="noopener"
             >Contect me</a
           >
         </div>
@@ -360,11 +404,7 @@
       <div class="modal">
         <header id="modalTitle">Project</header>
         <div class="content">
-          <div
-            class="video-wrap"
-            id="modalVideoWrap"
-            style="display: none"
-          ></div>
+          <div class="video-wrap" id="modalVideoWrap"></div>
           <img id="modalImg" alt="" />
           <div class="tags" id="modalTags"></div>
           <p id="modalDesc"></p>
@@ -379,112 +419,112 @@
     <script>
       const projects = [
         {
-          id: 'psi-sgm',
-          title: 'PageSpeed Monitor – SGM',
-          desc: 'Automates Google PSI runs via GitHub Actions, stores results, and publishes dashboards.',
-          tags: ['Python', 'GitHub Actions', 'CSV/JSON'],
+          id: "psi-sgm",
+          title: "PageSpeed Monitor – SGM",
+          desc: "Automates Google PSI runs via GitHub Actions, stores results, and publishes dashboards.",
+          tags: ["Python", "GitHub Actions", "CSV/JSON"],
           image:
-            'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
-          github: 'https://github.com/hima19/pagespeed-monitor-sgm',
-          live: 'https://maazway.github.io/pagespeed-monitor-sgm/',
-          badge: '2025',
+            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+          github: "https://github.com/hima19/pagespeed-monitor-sgm",
+          live: "https://maazway.github.io/pagespeed-monitor-sgm/",
+          badge: "2025",
         },
         {
-          id: 'playwright-nr',
-          title: 'Playwright E2E – Nutriclub/NR',
-          desc: 'Automated end-to-end testing with POM, CI matrix, retries, and Telegram report.',
-          tags: ['Playwright', 'CI/CD', 'Telegram'],
+          id: "playwright-nr",
+          title: "Playwright E2E – Nutriclub/NR",
+          desc: "Automated end-to-end testing with POM, CI matrix, retries, and Telegram report.",
+          tags: ["Playwright", "CI/CD", "Telegram"],
           image:
-            'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop',
-          github: 'https://github.com/hima19/playwright_generasimaju',
-          live: '#',
-          badge: '2025',
+            "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop",
+          github: "https://github.com/hima19/playwright_generasimaju",
+          live: "#",
+          badge: "2025",
         },
         {
-          id: 'n8n-bot',
-          title: 'n8n AI Media Bot',
-          desc: 'Telegram bot that takes prompts, generates image/video/audio, uploads to Drive, and returns links with metadata.',
-          tags: ['n8n', 'AI Ops', 'Drive'],
+          id: "n8n-bot",
+          title: "n8n AI Media Bot",
+          desc: "Telegram bot that takes prompts, generates image/video/audio, uploads to Drive, and returns links with metadata.",
+          tags: ["n8n", "AI Ops", "Drive"],
           image:
-            'https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=800&auto=format&fit=crop',
-          github: 'https://github.com/hima19',
-          live: '#',
-          badge: '2025',
+            "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=800&auto=format&fit=crop",
+          github: "https://github.com/hima19",
+          live: "#",
+          badge: "2025",
         },
         {
-          id: 'qa-portfolio',
-          title: 'QA Portfolio Website',
-          desc: 'React + FastAPI + MongoDB portfolio with case studies, metrics, and downloadable CV.',
-          tags: ['React', 'FastAPI', 'MongoDB'],
+          id: "qa-portfolio",
+          title: "QA Portfolio Website",
+          desc: "React + FastAPI + MongoDB portfolio with case studies, metrics, and downloadable CV.",
+          tags: ["React", "FastAPI", "MongoDB"],
           image:
-            'https://images.unsplash.com/photo-1520881363902-a0ff4e722963?q=80&w=800&auto=format&fit=crop',
-          github: 'https://github.com/hima19',
-          live: '#',
-          badge: '2025',
+            "https://images.unsplash.com/photo-1520881363902-a0ff4e722963?q=80&w=800&auto=format&fit=crop",
+          github: "https://github.com/hima19",
+          live: "#",
+          badge: "2025",
         },
         {
-          id: 'split-compare',
-          title: 'Split-View Compare Userscript',
-          desc: 'Im skilled in end-to-end, manual, and performance testing to guarantee application stability and quality',
-          tags: ['Userscript', 'QA Tools'],
+          id: "split-compare",
+          title: "Split-View Compare Userscript",
+          desc: "Im skilled in end-to-end, manual, and performance testing to guarantee application stability and quality",
+          tags: ["Userscript", "QA Tools"],
           image:
-            'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=800&auto=format&fit=crop',
-          github: 'https://github.com/hima19',
-          live: '#',
-          badge: '2025',
+            "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=800&auto=format&fit=crop",
+          github: "https://github.com/hima19",
+          live: "#",
+          badge: "2025",
         },
         {
-          id: 'otp-copy',
-          title: 'OTP Copy Refresh',
-          desc: 'Microcopy improvements for OTP flows to reduce confusion and support rate-limits with friendlier wording.',
-          tags: ['UX Writing', 'A/B Test'],
+          id: "otp-copy",
+          title: "OTP Copy Refresh",
+          desc: "Microcopy improvements for OTP flows to reduce confusion and support rate-limits with friendlier wording.",
+          tags: ["UX Writing", "A/B Test"],
           image:
-            'https://images.unsplash.com/photo-1505238680356-667803448bb6?q=80&w=800&auto=format&fit=crop',
-          github: 'https://github.com/hima19',
-          live: '#',
-          badge: '2025',
+            "https://images.unsplash.com/photo-1505238680356-667803448bb6?q=80&w=800&auto=format&fit=crop",
+          github: "https://github.com/hima19",
+          live: "#",
+          badge: "2025",
         },
         // Items with video (7,8,9)
         {
-          id: 'demo-video-1',
-          title: 'Userscript Demo – Prod vs Dev',
-          desc: 'Short demo showcasing mirrored scroll/click across two environments.',
-          tags: ['Demo', 'YouTube'],
+          id: "demo-video-1",
+          title: "Userscript Demo – Prod vs Dev",
+          desc: "Short demo showcasing mirrored scroll/click across two environments.",
+          tags: ["Demo", "YouTube"],
           image:
-            'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop',
-          github: 'https://github.com/hima19',
-          live: '#',
-          video: 'https://youtu.be/j4SVefGwGsQ?si=TZFVqWHC4NhJbuuq',
-          badge: '2025',
+            "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop",
+          github: "https://github.com/hima19",
+          live: "#",
+          video: "https://youtu.be/j4SVefGwGsQ?si=TZFVqWHC4NhJbuuq",
+          badge: "2025",
         },
         {
-          id: 'demo-video-2',
-          title: 'Playwright Run – Quick Tour',
-          desc: 'Walkthrough of CI matrix, retries, and Telegram reporting.',
-          tags: ['Demo', 'Playwright'],
+          id: "demo-video-2",
+          title: "Playwright Run – Quick Tour",
+          desc: "Walkthrough of CI matrix, retries, and Telegram reporting.",
+          tags: ["Demo", "Playwright"],
           image:
-            'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop',
-          github: 'https://github.com/hima19',
-          live: '#',
-          video: 'https://youtu.be/j4SVefGwGsQ?si=TZFVqWHC4NhJbuuq',
-          badge: '2025',
+            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop",
+          github: "https://github.com/hima19",
+          live: "#",
+          video: "https://youtu.be/j4SVefGwGsQ?si=TZFVqWHC4NhJbuuq",
+          badge: "2025",
         },
         {
-          id: 'demo-video-3',
-          title: 'n8n Bot – Media Pipeline',
-          desc: 'Prompt in → image/video/audio out, Drive upload + Telegram notify.',
-          tags: ['Demo', 'n8n'],
+          id: "demo-video-3",
+          title: "n8n Bot – Media Pipeline",
+          desc: "Prompt in → image/video/audio out, Drive upload + Telegram notify.",
+          tags: ["Demo", "n8n"],
           image:
-            'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop',
-          github: 'https://github.com/hima19',
-          live: '#',
-          video: 'https://youtu.be/j4SVefGwGsQ?si=TZFVqWHC4NhJbuuq',
-          badge: '2025',
+            "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop",
+          github: "https://github.com/hima19",
+          live: "#",
+          video: "https://youtu.be/j4SVefGwGsQ?si=TZFVqWHC4NhJbuuq",
+          badge: "2025",
         },
       ];
 
-      const grid = document.getElementById('projectGrid');
-      const pager = document.getElementById('pager');
+      const grid = document.getElementById("projectGrid");
+      const pager = document.getElementById("pager");
       const AUTOPLAY_VIDEO = false; // autoplay dimatikan sesuai request
       const INCLUDE_PLAYLIST_PARAMS = false; // agar menghindari blokir embed dari playlist
       const pageSize = 6;
@@ -495,7 +535,7 @@
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
+              entry.target.classList.add("visible");
               observer.unobserve(entry.target);
             }
           });
@@ -507,13 +547,13 @@
         currentPage = page;
         const start = (page - 1) * pageSize;
         const items = projects.slice(start, start + pageSize);
-        const justify = items.length < 3 ? 'center' : 'flex-start';
+        const justify = items.length < 3 ? "center" : "flex-start";
         grid.style.justifyContent = justify;
         grid.innerHTML = items
           .map(
             (p) => `
   <div class='card' data-id='${p.id}' style="position:relative;">
-    ${p.badge ? `<div class='badge'>${p.badge}</div>` : ''}
+    ${p.badge ? `<div class='badge'>${p.badge}</div>` : ""}
     <div class='thumb'><img src='${p.image}' alt='${
               p.title
             }' loading="lazy"></div>
@@ -524,116 +564,124 @@
   </div>
 `
           )
-          .join('');
+          .join("");
 
         document
-          .querySelectorAll('.card')
+          .querySelectorAll(".card")
           .forEach((el) => observer.observe(el));
         updatePager();
       }
 
       function updatePager() {
         if (totalPages <= 1) {
-          pager.style.display = 'none';
+          pager.style.display = "none";
           return;
         }
-        pager.style.display = 'flex';
+        pager.style.display = "flex";
         let html = `<button class="pager-btn" data-nav="prev" ${
-          currentPage === 1 ? 'disabled' : ''
+          currentPage === 1 ? "disabled" : ""
         }>Prev</button>`;
         for (let i = 1; i <= totalPages; i++) {
           html += `<button class="pager-btn ${
-            i === currentPage ? 'active' : ''
+            i === currentPage ? "active" : ""
           }" data-page="${i}">${i}</button>`;
         }
         html += `<button class="pager-btn" data-nav="next" ${
-          currentPage === totalPages ? 'disabled' : ''
+          currentPage === totalPages ? "disabled" : ""
         }>Next</button>`;
         pager.innerHTML = html;
       }
 
-      pager.addEventListener('click', (e) => {
-        const btn = e.target.closest('.pager-btn');
+      pager.addEventListener("click", (e) => {
+        const btn = e.target.closest(".pager-btn");
         if (!btn) return;
         if (btn.dataset.page) {
           renderPage(parseInt(btn.dataset.page));
-        } else if (btn.dataset.nav === 'prev' && currentPage > 1) {
+        } else if (btn.dataset.nav === "prev" && currentPage > 1) {
           renderPage(currentPage - 1);
-        } else if (btn.dataset.nav === 'next' && currentPage < totalPages) {
+        } else if (btn.dataset.nav === "next" && currentPage < totalPages) {
           renderPage(currentPage + 1);
         }
-        const prj = document.getElementById('projects');
+        const prj = document.getElementById("projects");
         if (prj) {
-          window.scrollTo({ top: prj.offsetTop - 10, behavior: 'smooth' });
+          window.scrollTo({ top: prj.offsetTop - 10, behavior: "smooth" });
         }
       });
 
       renderPage(1);
 
-      const backdrop = document.getElementById('modalBackdrop');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalImg = document.getElementById('modalImg');
-      const modalTags = document.getElementById('modalTags');
-      const modalDesc = document.getElementById('modalDesc');
-      const modalGithub = document.getElementById('modalGithub');
-      const modalLive = document.getElementById('modalLive');
-      const modalVideoWrap = document.getElementById('modalVideoWrap');
+      const backdrop = document.getElementById("modalBackdrop");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalImg = document.getElementById("modalImg");
+      const modalTags = document.getElementById("modalTags");
+      const modalDesc = document.getElementById("modalDesc");
+      const modalGithub = document.getElementById("modalGithub");
+      const modalLive = document.getElementById("modalLive");
+      const modalVideoWrap = document.getElementById("modalVideoWrap");
 
-      grid.addEventListener('click', (e) => {
-        const card = e.target.closest('.card');
+      grid.addEventListener("click", (e) => {
+        const card = e.target.closest(".card");
         if (!card) return;
         const p = projects.find((x) => x.id === card.dataset.id);
         if (!p) return;
         modalTitle.textContent = p.title;
         modalImg.src = p.image;
         modalDesc.textContent = p.desc;
-        modalTags.innerHTML = p.tags.map((t) => `<span>${t}</span>`).join('');
+        modalTags.innerHTML = p.tags.map((t) => `<span>${t}</span>`).join("");
         modalGithub.href = p.github;
         modalLive.href = p.live;
         if (p.video) {
-          modalImg.style.display = 'none';
-          modalVideoWrap.style.display = 'block';
+          modalImg.style.display = "none";
+          modalVideoWrap.style.display = "block";
           modalVideoWrap.innerHTML = `<iframe src="${toEmbedUrl(
             p.video,
             AUTOPLAY_VIDEO
           )}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>`;
         } else {
-          modalVideoWrap.innerHTML = '';
-          modalVideoWrap.style.display = 'none';
-          modalImg.style.display = 'block';
+          modalVideoWrap.innerHTML = "";
+          modalVideoWrap.style.display = "none";
+          modalImg.style.display = "block";
         }
-        backdrop.style.display = 'flex';
+        // Hide all badges when modal opens
+        document.querySelectorAll(".badge").forEach((badge) => {
+          badge.style.display = "none";
+        });
+        backdrop.style.display = "flex";
       });
 
-      backdrop.addEventListener('click', (e) => {
+      backdrop.addEventListener("click", (e) => {
         if (e.target === backdrop) {
-          backdrop.style.display = 'none';
-          modalVideoWrap.innerHTML = '';
+          backdrop.style.display = "none";
+          modalVideoWrap.innerHTML = "";
+          // Show all badges again when modal closes
+          document.querySelectorAll(".badge").forEach((badge) => {
+            badge.style.display = "block";
+          });
         }
       });
 
-      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById("year").textContent = new Date().getFullYear();
 
       function toEmbedUrl(url, autoplay = false) {
         try {
           const u = new URL(url);
-          if (u.hostname.includes('youtube.com')) {
-            const id = u.searchParams.get('v');
+          if (u.hostname.includes("youtube.com")) {
+            const id = u.searchParams.get("v");
             let embed = `https://www.youtube.com/embed/${id}?rel=0`;
-            if (autoplay) embed += '&autoplay=1&mute=1';
+            if (autoplay) embed += "&autoplay=1&mute=1";
             // opsional playlist param disisipkan jika diizinkan
             if (INCLUDE_PLAYLIST_PARAMS) {
-              const list = u.searchParams.get('list');
-              const index = u.searchParams.get('index');
+              const list = u.searchParams.get("list");
+              const index = u.searchParams.get("index");
               if (list) embed += `&list=${list}`;
               if (index) embed += `&index=${index}`;
             }
             return embed;
           }
-          if (u.hostname.includes('youtu.be')) {
+          if (u.hostname.includes("youtu.be")) {
             const id = u.pathname.slice(1);
             return `https://www.youtube.com/embed/${id}?rel=0${
-              autoplay ? '&autoplay=1&mute=1' : ''
+              autoplay ? "&autoplay=1&mute=1" : ""
             }`;
           }
         } catch (_e) {}
@@ -642,7 +690,7 @@
 
       function cardTemplate(p) {
         return `<div class='card' data-id='${p.id}' style="position:relative;">
-    ${p.badge ? `<div class='badge'>${p.badge}</div>` : ''}
+    ${p.badge ? `<div class='badge'>${p.badge}</div>` : ""}
     <div class='thumb'><img src='${p.image}' alt='${
           p.title
         }' loading="lazy"></div>
@@ -651,6 +699,36 @@
     }</div><div class='desc'>${p.desc}</div></div>
   </div>`;
       }
+
+      // Menambahkan log untuk debugging
+      console.log("Script loaded successfully");
+
+      // Memastikan elemen DOM ditemukan
+      if (!grid) {
+        console.error("Element projectGrid tidak ditemukan");
+      } else {
+        console.log("Element projectGrid ditemukan");
+      }
+
+      // Memastikan fungsi renderPage dipanggil
+      renderPage(1);
+      console.log("renderPage dipanggil dengan halaman 1");
+
+      // Fallback visibility - pastikan elemen terlihat
+      window.addEventListener("load", function () {
+        document.querySelectorAll(".hero, .section").forEach((el) => {
+          el.style.opacity = "1";
+        });
+      });
+
+      // Fallback jika animasi belum berjalan setelah 500ms
+      setTimeout(function () {
+        document.querySelectorAll(".hero, .section").forEach((el) => {
+          if (getComputedStyle(el).opacity === "0") {
+            el.style.opacity = "1";
+          }
+        });
+      }, 500);
     </script>
   </body>
 </html>
