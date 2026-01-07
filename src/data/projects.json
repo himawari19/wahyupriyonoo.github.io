@@ -42,5 +42,16 @@
     "live": "#",
     "video": "",
     "badge": "2026"
+  },
+  {
+    "id": "saucedemo-test-repository",
+    "title": "SauceDemo Comprehensive Test Suite",
+    "desc": "A professional test case repository for the SauceDemo e-commerce platform. Includes detailed manual test scripts, requirement traceability, and end-to-end functional scenarios to ensure platform reliability.",
+    "tags": ["Software QA", "Test Documentation", "Manual Testing", "Test Cases"],
+    "image": "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=800&auto=format&fit=crop",
+    "github": "https://github.com/himawari19/Sauce_Demo_Test_Cases",
+    "live": "https://docs.google.com/spreadsheets/d/1HZEWu-DS65VCZHOe1_qST84xHE15ZgMN/edit?usp=sharing",
+    "video": "",
+    "badge": "2026"
   }
 ]
