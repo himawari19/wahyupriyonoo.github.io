@@ -1,68 +1,46 @@
 [
   {
-    "id": "pagespeed-monitor",
-    "title": "Page Speed Monitor Website",
-    "desc": "Automates Google PSI runs via GitHub Actions, stores results, and publishes dashboards.",
-    "tags": ["Python", "GitHub Actions", "CSV/JSON"],
-    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
-    "github": "https://github.com/hima19/pagespeed-monitor-sgm",
-    "live": "https://maazway.github.io/pagespeed-monitor-sgm/",
-    "video": "https://www.youtube.com/watch?v=Cwi29hqho_U",
-    "badge": "2025"
-  },
-  {
-    "id": "psi-sgm",
-    "title": "PageSpeed Monitor – SGM",
-    "desc": "Automates Google PSI runs via GitHub Actions, stores results, and publishes dashboards.",
-    "tags": ["Python", "GitHub Actions", "CSV/JSON"],
-    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
-    "github": "https://github.com/hima19/pagespeed-monitor-sgm",
-    "live": "https://maazway.github.io/pagespeed-monitor-sgm/",
+    "id": "web-performance-monitor",
+    "title": "Web Performance Monitor",
+    "desc": "Continuous web performance monitoring using Google PageSpeed Insights, automated via GitHub Actions with stored metrics and public dashboards.",
+    "tags": ["Python", "GitHub Actions", "PageSpeed Insights", "CI/CD", "Web Performance"],
+    "image": "https://images.unsplash.com/photo-1625296276188-1d149bdaf560?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop",
+    "github": "https://github.com/himawari19/Web-Performance-Monitor",
+    "live": "https://himawari19.github.io/Web-Performance-Monitor/",
     "video": "",
-    "badge": "2025"
+    "badge": "2026"
   },
   {
-    "id": "playwright-nr",
-    "title": "Playwright E2E – Nutriclub/NR",
-    "desc": "Automated end-to-end testing with POM, CI matrix, retries, and Telegram report.",
-    "tags": ["Playwright", "CI/CD", "Telegram"],
-    "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop",
-    "github": "https://github.com/hima19/playwright_generasimaju",
-    "live": "#",
+    "id": "reqres-api-testing",
+    "title": "Reqres API Test Automation",
+    "desc": "Automated API testing suite for Reqres (reqres.in) covering CRUD flows, auth simulation, schema checks, negative tests, and CI execution via GitHub Actions with report artifacts.",
+    "tags": ["Python", "API Testing", "Reqres", "GitHub Actions", "CI/CD", "Test Reports"],
+    "image": "https://i.ibb.co.com/wh7gGDjS/Screenshot-01-07-2026-16-31-49.png?q=80&w=800&auto=format&fit=crop",
+    "github": "https://github.com/himawari19/api-sample-ecommerce",
+    "live": "https://api-sample-ecommerce.vercel.app",
     "video": "",
-    "badge": "2025"
+    "badge": "2026"
   },
   {
-    "id": "n8n-bot",
-    "title": "n8n AI Media Bot",
-    "desc": "Telegram bot that takes prompts, generates image/video/audio, uploads to Drive, and returns links with metadata.",
-    "tags": ["n8n", "AI Ops", "Drive"],
+    "id": "sauceai-test-lab",
+    "title": "Sauce Demo Test",
+    "desc": "AI-powered end-to-end test automation using Playwright with Page Object Model and Reporting.",
+    "tags": ["Python", "Playwright", "AI", "Test Automation"],
+    "image": "https://plus.unsplash.com/premium_photo-1680608979589-e9349ed066d5?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop",
+    "github": "https://github.com/himawari19/soucedemo-playwright",
+    "live": "https://himawari19.github.io/soucedemo-playwright/",
+    "video": "",
+    "badge": "2026"
+  },
+  {
+    "id": "api-automation-framework",
+    "title": "RESTful API Testing Framework",
+    "desc": "A comprehensive testing suite designed for manual and automated API validation. Features include end-to-end integration tests, automated reporting, and performance benchmarking for cloud-based services.",
+    "tags": ["Postman", "REST API", "QA Automation", "Documentation"],
     "image": "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=800&auto=format&fit=crop",
-    "github": "https://github.com/hima19",
+    "github": "https://github.com/himawari19/manual-api-testing",
     "live": "#",
     "video": "",
-    "badge": "2025"
-  },
-  {
-    "id": "split-compare",
-    "title": "Split-View Compare Userscript",
-    "desc": "Im skilled in end-to-end, manual, and performance testing to guarantee application stability and quality",
-    "tags": ["Userscript", "QA Tools"],
-    "image": "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=800&auto=format&fit=crop",
-    "github": "https://github.com/hima19",
-    "live": "#",
-    "video": "",
-    "badge": "2025"
-  },
-  {
-    "id": "otp-copy",
-    "title": "OTP Copy Refresh",
-    "desc": "Microcopy improvements for OTP flows to reduce confusion and support rate-limits with friendlier wording.",
-    "tags": ["UX Writing", "A/B Test"],
-    "image": "https://images.unsplash.com/photo-1505238680356-667803448bb6?q=80&w=800&auto=format&fit=crop",
-    "github": "https://github.com/hima19",
-    "live": "#",
-    "video": "",
-    "badge": "2025"
+    "badge": "2026"
   }
 ]
